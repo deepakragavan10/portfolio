@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
   display: flex;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 /* Layout */
@@ -24,7 +25,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  position: fixed; /* Make the sidebar fixed */
+  position: fixed;
   top: 0;
   left: 0;
   width: 280px;
@@ -35,9 +36,9 @@ body {
   align-items: center;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  z-index: 1000; /* Ensure the sidebar stays on top */
-  height: 100vh; /* Full viewport height */
-  overflow-y: auto; /* Allow sidebar content to scroll if needed */
+  z-index: 1000;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .profile-section {
@@ -91,7 +92,7 @@ body {
   background-color: #121212;
   margin-left: 0;
   overflow-y: auto;
-  height: 100vh; /* Ensure the main content takes the full height */
+  height: 100vh;
 }
 
 /* Navigation Bar */
@@ -212,25 +213,60 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .container {
     flex-direction: column;
     margin-left: 0;
+    padding-top: 0;
   }
 
   .sidebar {
+    position: relative;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    border-radius: 0;
     height: auto;
+    flex-direction: column;
+    border-radius: 0;
+    padding: 0.8rem;
+    order: 1;
+  }
+.sidebar {
+    line-height: 1.2; /* reduce vertical space between lines */
+    /* padding: 0.5rem;   optional: reduce padding */
   }
 
+  .sidebar li,
+  .sidebar p,
+  .sidebar a {
+    margin-bottom: 0.3rem; /* reduce spacing between elements if needed */
+  }
+   .nav-bar {
+    display: none !important; /* Hides navbar in mobile */
+  }
   .main-content {
+    order: 3;
     padding: 1rem;
+    height: auto;
+    overflow-y: visible;
+  }
+}
+@media screen and (max-width: 768px) {
+  #education {
+    padding-left: 0rem; /* Adjust as needed (e.g., 1rem = 16px) */
   }
 
-  .nav-bar {
-    justify-content: center;
-    gap: 1rem;
+  #education ul {
+    padding-left: 1rem; /* Optional: aligns list items too */
   }
+  #certifications ul {
+    padding-left: 1rem; /* Adjust the value if needed */
+  }
+  #skills {
+    font-size: 0.9rem; /* or 0.8rem as needed */
+  }
+  /* #education {
+    font-size: 0.8rem;
+  } */
 }
