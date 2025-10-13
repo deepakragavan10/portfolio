@@ -152,6 +152,35 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
+.internship-card ul {
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.internship-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Live Link Styling */
+.live-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #fdd835, #f9a825);
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(253, 216, 53, 0.3);
+}
+
+.live-link:hover {
+  background: linear-gradient(135deg, #ffeb3b, #fdd835);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(253, 216, 53, 0.5);
+}
+
 /* Projects Grid */
 .projects-grid {
   display: flex;
